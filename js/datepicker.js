@@ -324,7 +324,7 @@
           date.setDate(1);
           data = {weeks:[], test: 10};
           month = date.getMonth();
-          var dow = (date.getDay() - options.starts) % 7;
+          dow = (date.getDay() - options.starts) % 7;
           date.addDays(-(dow + (dow < 0 ? 7 : 0)));
           cnt = 0;
           while(cnt < 42) {
