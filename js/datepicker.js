@@ -166,6 +166,12 @@
          */
         calendars: 1,
         /**
+         * When having more than one calendar:
+         * If true, the months are around the initial date.
+         * If false, the months are ahead the initial date.
+         */
+        monthsAround: true,
+        /**
          * The day that starts the week, where 0: Sunday, 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday.  Defaults to Sunday
          */
         starts: 0,
@@ -817,6 +823,10 @@
             }
             options.current.setDate(1);
             options.current.setHours(0,0,0,0);
+
+            if (!options.monthsAround) {
+                options.current.addMonths(options.calendars / 2);
+            }
 
             var id = 'datepicker_' + parseInt(Math.random() * 1000), cnt;
             options.id = id;
