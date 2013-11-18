@@ -29,10 +29,10 @@
         days:  'datepickerViewDays'
       },
       tpl = {
-        wrapper: '<div class="datepicker"><div class="datepickerBorderT" /><div class="datepickerBorderB" /><div class="datepickerBorderL" /><div class="datepickerBorderR" /><div class="datepickerBorderTL" /><div class="datepickerBorderTR" /><div class="datepickerBorderBL" /><div class="datepickerBorderBR" /><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr></tr></tbody></table></div></div>',
+        wrapper: '<div class="datepicker"><div class="datepickerContainer"><table><tbody><tr></tr></tbody></table></div></div>',
         head: [
           '<td class="datepickerBlock">',
-          '<table cellspacing="0" cellpadding="0">',
+          '<table>',
             '<thead>',
               '<tr>',
                 '<th colspan="7"><a class="datepickerGoPrev" href="#"><span><%=prev%></span></a>',
@@ -275,16 +275,6 @@
           monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         },
         /**
-         * The combined height from the top/bottom borders.  'false' is the default
-         * and generally the correct value.
-         */
-        extraHeight: false,
-        /**
-         * The combined width from the left/right borders.  'false' is the default
-         * and generally the correct value.
-         */
-        extraWidth: false,
-        /**
          * Private option, used to determine when a range is selected
          */
         lastSel: false
@@ -447,17 +437,12 @@
       layout = function(el) {
         var options = $(el).data('datepicker');
         var cal = $('#' + options.id);
-        if (options.extraHeight === false) {
-          var divs = $(el).find('div');
-          options.extraHeight = divs.get(0).offsetHeight + divs.get(1).offsetHeight;  // heights from top/bottom borders
-          options.extraWidth = divs.get(2).offsetWidth + divs.get(3).offsetWidth;     // widths from left/right borders
-        }
         var tbl = cal.find('table:first').get(0);
-        var width = tbl.offsetWidth;
-        var height = tbl.offsetHeight;
+        var width = tbl.offsetWidth + 22;
+        var height = tbl.offsetHeight + 22;
         cal.css({
-          width: width + options.extraWidth + 'px',
-          height: height + options.extraHeight + 'px'
+          width: width + 'px',
+          height: height + 'px'
         }).find('div.datepickerContainer').css({
           width: width + 'px',
           height: height + 'px'

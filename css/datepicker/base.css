@@ -14,16 +14,10 @@ div.datepicker {
   position: absolute;
 }
 
-/* Hide border divs by default */
-.datepickerBorderT,
-.datepickerBorderB,
-.datepickerBorderL,
-.datepickerBorderR,
-.datepickerBorderTL,
-.datepickerBorderTR,
-.datepickerBorderBL,
-.datepickerBorderBR {
-  display:none;
+.datepickerContainer * { /* override bootstrap overrides */
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .datepickerHidden {
