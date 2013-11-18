@@ -51,7 +51,7 @@
             '</thead>',
           '</table></td>'
         ],
-        space : '<td class="datepickerSpace"><div></div></td>',
+        space : '',
         days: [
           '<tbody class="datepickerDays">',
             '<tr>',
@@ -270,7 +270,7 @@
          * Locale text for day/month names: provide a hash with keys 'daysMin', 'months' and 'monthsShort'. Default english
          */
         locale: {
-          daysMin: ["S", "M", "T", "W", "T", "F", "S"],
+          daysMin: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
           months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
           monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         },
@@ -300,7 +300,7 @@
           if(i == options.calendars - 1) tblCal.addClass('datepickerLastView');
 
           if(tblCal.hasClass('datepickerViewDays')) {
-            dow = date.getMonthName(true)+", "+date.getFullYear();
+            dow = date.getMonthName(false) + ' / ' + date.getFullYear();
           } else if(tblCal.hasClass('datepickerViewMonths')) {
             dow = date.getFullYear();
           } else if(tblCal.hasClass('datepickerViewYears')) {

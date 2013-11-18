@@ -1,0 +1,111 @@
+/* Datepicker border styling */
+.datepicker {
+  background-color: #F7F7F7;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px;
+}
+
+.datepicker .datepickerDays td {
+  padding: 6px;
+}
+
+/* Tighten up the spacing between multiple calendars */
+.datepickerSpace div {
+  width:2px;
+}
+
+.datepicker thead th {
+  padding: 6px;
+}
+.datepicker th {
+  background-color: #333333;
+}
+div.datepicker th a.datepickerMonth {
+  color: #ffffff;
+  font-weight:normal;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+/* style the day of week header cells */
+div.datepicker th {
+  color: #333333;
+  font-weight: normal;
+}
+/* grey underline beneath day of week row */
+div.datepicker table thead tr.datepickerDoW th {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.datepickerDoW th {
+  background: #ffffff;
+}
+
+div.datepicker th a.datepickerGoNext,
+div.datepicker th a.datepickerGoPrev {
+  color: #fff;
+}
+
+/* Black text, white background, and grey borders around day cells */
+div.datepicker a,
+div.datepicker a:hover {
+  color: black;
+}
+div.datepicker table.datepickerViewDays,
+div.datepicker table.datepickerViewMonths,
+div.datepicker table.datepickerViewYears {
+  background-color:white;
+}
+/*div.datepicker table tbody.datepickerDays td {
+  border: 1px solid #F7F7F7;
+}*/
+
+/* cell color for selected days */
+tbody.datepickerDays td.datepickerSelected {
+  background-color: #32b7c6;
+  color: #ffffff;
+}
+
+/* Grey out dates in the future */
+div.datepicker td.datepickerFuture a {
+  color: #333333;
+}
+
+tbody.datepickerDays td.datepickerSelected a {
+  color: #ffffff;
+}
+
+/* cell background on hover */
+div.datepicker tbody.datepickerDays td:hover {
+  background: #32b7c6;
+}
+
+div.datepicker tbody.datepickerDays td:hover span {
+  color: #ffffff;
+}
+
+/* Bold today's date
+div.datepicker td.datepickerToday a {
+  font-weight:bold;
+}*/
+
+/* cells are wider in the clean style
+.datepickerYears a, .datepickerMonths a {
+  width: 62px;
+}
+.datepickerMonths td:first-child a,
+.datepickerYears td:first-child a {
+  width:39px;
+}
+div.datepicker th a.datepickerMonth {
+  width:121px;
+}*/
+
+div.datepicker th a.datepickerGoPrev {
+  float: left;
+}
+
+div.datepicker th a.datepickerGoNext {
+  float: right;
+}
